@@ -1,1 +1,40 @@
-
+  <div class="row">
+    <div class = "col-md-12">
+      <div class="jumbotron">
+        <h1 class="text-center">My Projects</h1>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div *ngIf="gitProjects">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 style="font-style: italic; text-align: center; text-decoration: underline;">Keystone projects</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <br><br>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngFor="let f of gitProjects">
+        <div class="col-md-6 col-l-6">
+            <div class="row">
+              <div class="col-md-6 col-l-6">
+                <div *ngFor="let x of f.picturez">
+                  <img class="card-img-top" [src]="x.image" alt="x.alt_tag">
+                </div>
+              </div>
+              <div class="col-md-6 col-l-6">
+                <p class="styled"> Title: {{f.title}} </p>
+                <p style="font-style: italic;" >{{f.description}}</p>
+                <p>Find the project <a href="f.live_link">here</a></p>
+              </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>

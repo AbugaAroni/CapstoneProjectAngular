@@ -20,7 +20,6 @@ export class AboutComponent implements OnInit, OnDestroy {
     this.subscription = this.userService.getUsers()
     .subscribe(gitUser => this.gitUser = gitUser);
 
-    /* .subscribe((response: any) => {console.log('Data', response);}); */
   }
 
   ngOnDestroy() {

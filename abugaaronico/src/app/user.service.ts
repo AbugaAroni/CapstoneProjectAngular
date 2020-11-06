@@ -10,17 +10,19 @@ export class UserService {
   getProjects = new BehaviorSubject<any>([]);
 
   private url:string;
+  private projecturl:string;
 
   constructor(private http: HttpClient) {
 
     this.url = 'https://abugaaronico.herokuapp.com/user/?format=json';
-    this.projecturl = 'https://abugaaronico.herokuapp.com/project/?format=json'
+    this.projecturl = 'https://abugaaronico.herokuapp.com/project/?format=json';
   }
 
   getthisUser() {
     return this.http.get(this.url).subscribe(getUser => {
     this.getUser.next(getUser);
   });
+  }
 
   getthisprojects() {
     return this.http.get(this.projecturl).subscribe(getProjects => {
@@ -33,6 +35,6 @@ export class UserService {
   }
 
   getallProjects() {
-    return this.getProjects.asObservable();  
+    return this.getProjects.asObservable();
   }
 }
