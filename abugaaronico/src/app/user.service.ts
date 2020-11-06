@@ -30,6 +30,18 @@ export class UserService {
   });
   }
 
+  addprojects() {
+    return this.http.post(this.projecturl).subscribe(getProjects => {
+    this.getProjects.next(getProjects);
+  });
+  }
+
+  public addPost(postData: Object) {
+  this.httpClient.post(this.projecturl, postData).subscribe(data => {
+    console.log(data);
+  });
+}
+
   getUsers() {
     return this.getUser.asObservable();
   }
