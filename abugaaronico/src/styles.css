@@ -1,3 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~bootstrap/dist/css/bootstrap.css"
+.lightgrey {
+  background-color: #ADD8E6;
+  border-style: outset;
+  padding: 10px;
+}
+
+.styled {
+  font-weight: bold;
+}

@@ -1,25 +1,36 @@
-<div class="users">
+<div class="container">
+  <div class="row">
+    <div class = "col-md-5">
+    </div>
+  </div>
+  <div class="row">
+    <div class = "col-md-5">
+    </div>
+  </div>
   <div *ngIf="gitUser">
-    <div class="row lightgrey">
+    <div class="row">
       <div class="col-md-6">
-        <div class="card">
-          <p> cut pic </p>
+      <div *ngFor="let f of gitUser">
+            <div *ngFor="let x of f.picturez">
+          <img class="card-img-top" [src]="x.image" alt="x.alt_tag">
+          </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <div *ngFor="let f of gitUser">
-            <h3 class="card-title" style> <span class="styled">Username: </span> {{f.id}}</h3>
-          <br>
-            <h3 class="card-title" style><span class="styled">Fullname: </span> {{f.first_name}}</h3>
-          <br>
-            <h5 class="card-title" style><span>Employment status: </span> {{f.last_name}}</h5>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="text-center">Header</h3>
+          </div>
+            <div class="panel-body">
+                <div *ngFor="let f of gitUser">
+                  <h3 class="card-title" style> <span class="styled">Username: </span> {{f.user.username}}</h3>
+                <br>
+                  <h3 class="card-title" style><span class="styled">Fullname: {{f.id}}</span> </h3>
+                <br>
+                  <h5 class="card-title" style><span>Employment status: </span> </h5>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card-body">
-          </div>
-        </div>
       </div>
     </div>
   </div>
