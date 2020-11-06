@@ -1,6 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class = "col-md-5">
+    <div class = "col-md-12">
+      <div class="jumbotron">
+        <h1 class="text-center">About me</h1>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -17,17 +20,29 @@
         </div>
       </div>
       <div class="col-md-6">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="text-center">Header</h3>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="jumbotron">
+              <h1 class="text-center">ABUGA ARONI</h1>
+            </div>
           </div>
-            <div class="panel-body">
+        </div>
+        <div class="row">
+          <div class="col-md-12">
                 <div *ngFor="let f of gitUser">
-                  <h3 class="card-title" style> <span class="styled">Username: </span> {{f.user.username}}</h3>
-                <br>
-                  <h3 class="card-title" style><span class="styled">Fullname: {{f.id}}</span> </h3>
-                <br>
-                  <h5 class="card-title" style><span>Employment status: </span> </h5>
+              <p class="card-title" style><span class="headingstyle">About me</span> </p>                  
+                  <p class="card-title" style> <span class="styled"></span> {{f.about}}</p>
+                <hr>
+                  <p class="card-title" style><span class="headingstyle">Educational background</span> </p>
+                    <div *ngFor="let x of f.educationz">
+                      <p><span class="styled">{{x.qualification}}: </span>{{x.title}}</p>
+                    </div>
+                <hr>
+                <p class="card-title" style><span class="headingstyle">Employment history</span> </p>
+                  <div *ngFor="let x of f.career">
+                    <p><span class="styled">Employer: </span>{{x.title}}</p>
+                  </div>
+              <hr>
                 </div>
               </div>
             </div>

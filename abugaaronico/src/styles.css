@@ -9,3 +9,8 @@
 .styled {
   font-weight: bold;
 }
+
+.headingstyle{
+  font-weight: bold;
+  text-decoration: underline;
+}
